@@ -8,6 +8,7 @@ import StylingConsultationIcon from '../assets/icons/styling-consultation.png'
 import HomeStagingIcon from '../assets/icons/home-staging.png'
 import FurnitureSelectionImage from '../assets/furniture-selection.png'
 import DressingRoomImage from '../assets/dressing-room-design.png'
+import InteriorDesignImage from '../assets/interior-design.png'
 
 export default function HomePage({ setCurrentPage }) {
   const { language } = useLanguage()
@@ -63,7 +64,7 @@ export default function HomePage({ setCurrentPage }) {
         <div className="services-grid">
           {t.home.services.map((service, index) => {
             const serviceImages = [
-              '/upload/IMG_3450.JPG',  // Interior Design
+              InteriorDesignImage,  // Interior Design
               FurnitureSelectionImage,  // Furniture Selection
               '/upload/IMG_3436.JPG',  // Styling Consultation
               '/upload/IMG_3434.JPG'   // Home Staging
