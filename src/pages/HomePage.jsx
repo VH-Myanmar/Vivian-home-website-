@@ -10,6 +10,7 @@ import FurnitureSelectionImage from '../assets/furniture-selection.png'
 import DressingRoomImage from '../assets/dressing-room-design.png'
 import InteriorDesignImage from '../assets/interior-design.png'
 import StylingConsultationImage from '../assets/styling-consultation.jpg'
+import HomeStagingImage from '../assets/home-staging.jpg'
 
 export default function HomePage({ setCurrentPage }) {
   const { language } = useLanguage()
@@ -68,7 +69,7 @@ export default function HomePage({ setCurrentPage }) {
               InteriorDesignImage,  // Interior Design
               FurnitureSelectionImage,  // Furniture Selection
               StylingConsultationImage,  // Styling Consultation
-              '/upload/IMG_3434.JPG'   // Home Staging
+              HomeStagingImage   // Home Staging
             ]
             const serviceIcons = [
               '/upload/Interiordesign.jpg',  // Interior Design
