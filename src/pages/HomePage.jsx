@@ -11,6 +11,7 @@ import DressingRoomImage from '../assets/dressing-room-design.png'
 import InteriorDesignImage from '../assets/interior-design.png'
 import StylingConsultationImage from '../assets/styling-consultation.jpg'
 import HomeStagingImage from '../assets/home-staging.jpg'
+import ModernBathroomImage from '../assets/modern-bathroom.jpg'
 
 export default function HomePage({ setCurrentPage }) {
   const { language } = useLanguage()
@@ -47,8 +48,8 @@ export default function HomePage({ setCurrentPage }) {
         title: language === 'en' ? 'Modern Bathroom Transformation' : 'ခေတ်သစ် အရေအခွံခန်း ပြောင်းလဲမှု',
         description: language === 'en'
           ? 'Serene spa-like atmosphere with soft green walls, white subway tiles, and premium fixtures. Tranquility in every detail.'
-          : 'နူးညံ့သောအစိမ်းရောင်နံရံ၊အဖြူရောင်ခြင်းတြင်းပိုက်များနှင့်အဆင့်မြင့်ကိရိယာများရှိသောအေးမြတ်သောစပါတွင်ဆန္ဒ။ တစ်ခုခုတစ်ခြင်းတွင်အေးမြတ်မှု။',
-        image: '/upload/85981832177fca0781c9a1ead32f33f6.jpeg',
+          : 'နူးညံ့သောအစိမ်းရောင်နံရံ၊အဖြူရောင်ခြင်းတြင်းပိုက်များနှင့်အဆင့်မြင့်ကိရိယာများရှိသောအေးမြ�ုတ်သောစပါတွင်ဆန္ဒ။ တစ်ခုခုတစ်ခြင်းတွင်အေးမြတ်မှု။',
+        image: ModernBathroomImage,
         date: language === 'en' ? '1 week ago' : '၁ အပတ်အရင်'
       }
     ]
