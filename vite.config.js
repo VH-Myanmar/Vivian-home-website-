@@ -7,10 +7,16 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          'portfolio': ['./src/pages/PortfolioPage.jsx'],
-          'completed-projects': ['./src/pages/CompletedProjectsPage.jsx'],
-          'vendor': ['react', 'react-dom']
+        manualChunks: (id) => {
+          if (id.includes('PortfolioPage')) {
+            return 'portfolio';
+          }
+          if (id.includes('CompletedProjectsPage')) {
+            return 'completed-projects';
+          }
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
         }
       }
     },
