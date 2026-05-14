@@ -2,6 +2,7 @@ import { useLanguage } from '../context/LanguageContext'
 import { translations } from '../translations/content'
 import './StoryPage.css'
 import GrowingDemandImage from '../assets/growing-demand.jpg'
+import TodayProjectsImage from '../assets/today-projects.jpg'
 
 export default function StoryPage() {
   const { language } = useLanguage()
@@ -50,16 +51,20 @@ export default function StoryPage() {
             </div>
           </div>
 
-          {/* Chapter 4 */}
-          <div className="timeline-item">
-            <div className="timeline-content">
-              <h2>{t.story.chapter4Title}</h2>
-              <div className="timeline-image">
-                <img src="/upload/IMG_3427.JPG" alt="Living Room - Today's Projects" />
+          {/* Chapter 4 - Today (Portrait layout with image left, text right) */}
+          <div className="timeline-item portrait-layout">
+            <div className="timeline-content portrait-content">
+              <div className="portrait-image-container">
+                <div className="timeline-image portrait">
+                  <img src={TodayProjectsImage} alt="Entryway - Today's Projects" />
+                </div>
               </div>
-              <p>{t.story.chapter4Text1}</p>
-              <p>{t.story.chapter4Text2}</p>
-              <p>{t.story.chapter4Text3}</p>
+              <div className="portrait-text-container">
+                <h2>{t.story.chapter4Title}</h2>
+                <p>{t.story.chapter4Text1}</p>
+                <p>{t.story.chapter4Text2}</p>
+                <p>{t.story.chapter4Text3}</p>
+              </div>
             </div>
           </div>
         </div>
