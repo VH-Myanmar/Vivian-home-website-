@@ -14,7 +14,7 @@ export default function CompletedProjectsPage({ setCurrentPage }) {
   useEffect(() => {
     const loadProjects = async () => {
       try {
-        const response = await fetch('/src/data/projects.json')
+        const response = await fetch('/data/projects.json')
         const data = await response.json()
         setProjectsData(data)
       } catch (error) {
