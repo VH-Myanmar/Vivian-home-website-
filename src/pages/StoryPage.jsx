@@ -26,19 +26,7 @@ export default function StoryPage() {
             </div>
           </div>
 
-          {/* Chapter 2 */}
-          <div className="timeline-item">
-            <div className="timeline-content">
-              <h2>{t.story.chapter2Title}</h2>
-              <div className="timeline-image">
-                <img src={GrowingDemandImage} alt="Elegant Living Room - Growing Demand" />
-              </div>
-              <p>{t.story.chapter2Text1}</p>
-              <p>{t.story.chapter2Text2}</p>
-            </div>
-          </div>
-
-          {/* Chapter 3 */}
+          {/* Chapter 2 - Birth of Vivian Home (moved up) */}
           <div className="timeline-item">
             <div className="timeline-content">
               <h2>{t.story.chapter3Title}</h2>
@@ -47,6 +35,18 @@ export default function StoryPage() {
               </div>
               <p>{t.story.chapter3Text1}</p>
               <p>{t.story.chapter3Text2}</p>
+            </div>
+          </div>
+
+          {/* Chapter 3 - Growing Demand (moved down) */}
+          <div className="timeline-item">
+            <div className="timeline-content">
+              <h2>{t.story.chapter2Title}</h2>
+              <div className="timeline-image">
+                <img src={GrowingDemandImage} alt="Elegant Living Room - Growing Demand" />
+              </div>
+              <p>{t.story.chapter2Text1}</p>
+              <p>{t.story.chapter2Text2}</p>
             </div>
           </div>
 
