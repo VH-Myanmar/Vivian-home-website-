@@ -1,6 +1,7 @@
 import { useLanguage } from '../context/LanguageContext'
 import { translations } from '../translations/content'
 import './StoryPage.css'
+import GrowingDemandImage from '../assets/growing-demand.jpg'
 
 export default function StoryPage() {
   const { language } = useLanguage()
@@ -30,7 +31,7 @@ export default function StoryPage() {
             <div className="timeline-content">
               <h2>{t.story.chapter2Title}</h2>
               <div className="timeline-image">
-                <img src="/upload/IMG_3434.JPG" alt="Elegant Living Room - Growing Demand" />
+                <img src={GrowingDemandImage} alt="Elegant Living Room - Growing Demand" />
               </div>
               <p>{t.story.chapter2Text1}</p>
               <p>{t.story.chapter2Text2}</p>
