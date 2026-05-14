@@ -33,7 +33,7 @@ export default function StoryPage() {
             <div className="timeline-content">
               <h2>{t.story.chapter3Title}</h2>
               <div className="timeline-image">
-                <img src={BirthVivianHomeImage} alt="Modern Living Room - Birth of Vivian Home" />
+                <img src="/upload/birth-vivian-home.jpg" alt="Modern Living Room - Birth of Vivian Home" />
               </div>
               <p>{t.story.chapter3Text1}</p>
               <p>{t.story.chapter3Text2}</p>
