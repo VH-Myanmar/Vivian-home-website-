@@ -840,8 +840,7 @@
 .service-card.portrait-image .service-image.portrait {
   order: 2;
   width: 100%;
-  height: auto;
-  aspect-ratio: 9/16;
+  height: 250px;
   overflow: hidden;
   background: #f5f5f5;
   position: relative;
