@@ -77,8 +77,8 @@ export default function HomePage({ setCurrentPage }) {
               '/upload/Stylingconsultation.jpg',  // Styling Consultation
               '/upload/Homestaging.jpg'   // Home Staging
             ]
-            // For Styling Consultation (index 2), show image below text
-            const isPortraitCard = index === 2
+            // For Styling Consultation (index 2) and Home Staging (index 3), show image below text
+            const isPortraitCard = index === 2 || index === 3
             
             return (
               <div key={index} className={`service-card ${isPortraitCard ? 'portrait-image' : ''}`}>
