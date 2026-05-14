@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Primary Colors - Inspired by Vivian Home's Design Palette */
+  --primary-rose: #D4A5A5;      /* Dusty Rose/Mauve - Logo color */
+  --primary-green: #6B8E7F;     /* Sage Green - Wall color accent */
+  --secondary-taupe: #B8A89F;   /* Warm Taupe/Greige - Neutral backdrop */
+  --accent-charcoal: #2C2C2C;   /* Deep Charcoal - Contrast & grounding */
+  --light-greige: #E8DDD5;      /* Light Greige - Soft backgrounds */
+  --warm-cream: #F5F0EB;        /* Warm Cream - Page backgrounds */
+  
+  /* Wood Tones */
+  --warm-wood: #A0826D;         /* Warm honey wood */
+  --dark-wood: #5C4033;         /* Rich mahogany */
+  
+  /* Fonts */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-accent: 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+p {
+  font-family: var(--font-body);
+  line-height: 1.8;
+}
+
+button, .btn {
+  font-family: var(--font-accent);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-rose);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-green);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--primary-rose);
+  color: white;
+}
+
+::-moz-selection {
+  background-color: var(--primary-rose);
+  color: white;
+}
+
+/* Responsive Typography */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+}
