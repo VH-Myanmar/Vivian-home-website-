@@ -9,6 +9,7 @@ import HomeStagingIcon from '../assets/icons/home-staging.png'
 import FurnitureSelectionImage from '../assets/furniture-selection.png'
 import DressingRoomImage from '../assets/dressing-room-design.png'
 import InteriorDesignImage from '../assets/interior-design.png'
+import StylingConsultationImage from '../assets/styling-consultation.jpg'
 
 export default function HomePage({ setCurrentPage }) {
   const { language } = useLanguage()
@@ -66,7 +67,7 @@ export default function HomePage({ setCurrentPage }) {
             const serviceImages = [
               InteriorDesignImage,  // Interior Design
               FurnitureSelectionImage,  // Furniture Selection
-              '/upload/IMG_3436.JPG',  // Styling Consultation
+              StylingConsultationImage,  // Styling Consultation
               '/upload/IMG_3434.JPG'   // Home Staging
             ]
             const serviceIcons = [
@@ -75,11 +76,16 @@ export default function HomePage({ setCurrentPage }) {
               '/upload/Stylingconsultation.jpg',  // Styling Consultation
               '/upload/Homestaging.jpg'   // Home Staging
             ]
+            // For Styling Consultation (index 2), show image below text
+            const isPortraitCard = index === 2
+            
             return (
-              <div key={index} className="service-card">
-                <div className="service-image">
-                  <img src={serviceImages[index]} alt={service.title} />
-                </div>
+              <div key={index} className={`service-card ${isPortraitCard ? 'portrait-image' : ''}`}>
+                {!isPortraitCard && (
+                  <div className="service-image">
+                    <img src={serviceImages[index]} alt={service.title} />
+                  </div>
+                )}
                 <div className="service-content">
                   <div className="service-header">
                     <div className="service-icon">
@@ -91,6 +97,11 @@ export default function HomePage({ setCurrentPage }) {
                     </div>
                   </div>
                 </div>
+                {isPortraitCard && (
+                  <div className="service-image portrait">
+                    <img src={serviceImages[index]} alt={service.title} />
+                  </div>
+                )}
               </div>
             )
           })}
