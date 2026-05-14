@@ -7,6 +7,7 @@ import FurnitureSelectionIcon from '../assets/icons/furniture-selection.png'
 import StylingConsultationIcon from '../assets/icons/styling-consultation.png'
 import HomeStagingIcon from '../assets/icons/home-staging.png'
 import FurnitureSelectionImage from '../assets/furniture-selection.png'
+import DressingRoomImage from '../assets/dressing-room-design.png'
 
 export default function HomePage({ setCurrentPage }) {
   const { language } = useLanguage()
@@ -34,7 +35,7 @@ export default function HomePage({ setCurrentPage }) {
         description: language === 'en'
           ? 'Custom cabinetry with warm wood tones and elegant lighting. Every detail carefully curated for functionality and beauty.'
           : 'အပူပြင်ဆင်သောသစ်ကြွေအရောင်နှင့်လှပသောအလင်းအရောင်ရှိသောလိုအပ်သောအီတုံ။ တစ်ခုခုတစ်ခြင်းတွင်လုပ်ဆောင်ချက်နှင့်လှပမှုအတွက်သေချာစွာစုစည်းထားသည်။',
-        image: '/upload/c7fe6dfcba6dac4abb6748104fe0a0ae.jpeg',
+        image: DressingRoomImage,
         date: language === 'en' ? '5 days ago' : '၅ ရက်အရင်'
       },
       {
