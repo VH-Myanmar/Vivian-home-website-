@@ -164,8 +164,12 @@ export default function HomePage({ setCurrentPage }) {
           slides={lightboxImage ? [{ src: lightboxImage, alt: 'Project Photo' }] : []}
           index={0}
           toolbar={false}
-          plugins={[]}
           on={{ view: () => {} }}
+          controller={{ closeOnBackdropClick: true }}
+          styles={{
+            navigationPrev: { display: 'none' },
+            navigationNext: { display: 'none' }
+          }}
         />
 
         <div className="feed-cta">
@@ -191,8 +195,12 @@ export default function HomePage({ setCurrentPage }) {
         slides={servicesLightboxImage ? [{ src: servicesLightboxImage, alt: 'Service Photo' }] : []}
         index={0}
         toolbar={false}
-        plugins={[]}
         on={{ view: () => {} }}
+        controller={{ closeOnBackdropClick: true }}
+        styles={{
+          navigationPrev: { display: 'none' },
+          navigationNext: { display: 'none' }
+        }}
       />
 
       {/* Connection to Myinka */}
