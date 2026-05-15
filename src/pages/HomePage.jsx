@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { translations } from '../translations/content'
 import './HomePage.css'
+import Lightbox from 'yet-another-react-lightbox'
+import 'yet-another-react-lightbox/styles.css'
 import InteriorDesignIcon from '../assets/icons/interior-design.png'
 import FurnitureSelectionIcon from '../assets/icons/furniture-selection.png'
 import StylingConsultationIcon from '../assets/icons/styling-consultation.png'
@@ -18,6 +20,8 @@ export default function HomePage({ setCurrentPage }) {
   const t = translations[language]
   const [facebookPosts, setFacebookPosts] = useState([])
   const [loading, setLoading] = useState(true)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [lightboxIndex, setLightboxIndex] = useState(0)
 
   useEffect(() => {
     // Using actual project photos from Vivian Home's portfolio
@@ -129,9 +133,11 @@ export default function HomePage({ setCurrentPage }) {
           <div className="feed-grid">
             {facebookPosts.map(post => (
               <div key={post.id} className="feed-card">
-                <div className="feed-image">
+                <div className="feed-image" onClick={() => {
+                  setLightboxIndex(facebookPosts.findIndex(p => p.id === post.id))
+                  setLightboxOpen(true)
+                }} style={{ cursor: 'pointer' }}>
                   <img src={post.image} alt={post.title} />
-                  <span className="feed-source">{post.source}</span>
                 </div>
                 <div className="feed-content">
                   <h3>{post.title}</h3>
@@ -142,6 +148,16 @@ export default function HomePage({ setCurrentPage }) {
             ))}
           </div>
         )}
+
+        <Lightbox
+          open={lightboxOpen}
+          close={() => setLightboxOpen(false)}
+          slides={facebookPosts.map(post => ({
+            src: post.image,
+            alt: post.title
+          }))}
+          index={lightboxIndex}
+        />
 
         <div className="feed-cta">
           <p>{t.home.followUs}</p>
