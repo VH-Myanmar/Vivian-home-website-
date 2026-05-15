@@ -182,8 +182,8 @@
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
-  border-right: 5px solid #6B8E7F;
-  border-top: 5px solid #6B8E7F;
+  border-left: 3px solid #6B8E7F;
+  border-top: 3px solid #6B8E7F;
   box-sizing: border-box;
 }
 
@@ -253,8 +253,8 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   cursor: pointer;
-  border-right: 5px solid #6B8E7F;
-  border-top: 5px solid #6B8E7F;
+  border-left: 3px solid #6B8E7F;
+  border-top: 3px solid #6B8E7F;
   box-sizing: border-box;
 }
 
