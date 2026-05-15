@@ -4,7 +4,7 @@ import { translations } from '../translations/content'
 import './HomePage.css'
 import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
-import { Zoom } from 'yet-another-react-lightbox/plugins'
+import { Zoom, Counter } from 'yet-another-react-lightbox/plugins'
 import InteriorDesignIcon from '../assets/icons/interior-design.png'
 import FurnitureSelectionIcon from '../assets/icons/furniture-selection.png'
 import StylingConsultationIcon from '../assets/icons/styling-consultation.png'
@@ -164,6 +164,7 @@ export default function HomePage({ setCurrentPage }) {
           slides={lightboxImage ? [{ src: lightboxImage, alt: 'Project Photo' }] : []}
           index={0}
           toolbar={false}
+          plugins={[]}
           on={{ view: () => {} }}
         />
 
@@ -190,6 +191,7 @@ export default function HomePage({ setCurrentPage }) {
         slides={servicesLightboxImage ? [{ src: servicesLightboxImage, alt: 'Service Photo' }] : []}
         index={0}
         toolbar={false}
+        plugins={[]}
         on={{ view: () => {} }}
       />
 
