@@ -165,11 +165,12 @@ export default function HomePage({ setCurrentPage }) {
           index={0}
           toolbar={false}
           on={{ view: () => {} }}
-          controller={{ closeOnBackdropClick: true }}
+          controller={{ closeOnBackdropClick: true, keyboard: false }}
           styles={{
             navigationPrev: { display: 'none' },
             navigationNext: { display: 'none' }
           }}
+          carousel={{ finite: true }}
         />
 
         <div className="feed-cta">
@@ -196,11 +197,12 @@ export default function HomePage({ setCurrentPage }) {
         index={0}
         toolbar={false}
         on={{ view: () => {} }}
-        controller={{ closeOnBackdropClick: true }}
+        controller={{ closeOnBackdropClick: true, keyboard: false }}
         styles={{
           navigationPrev: { display: 'none' },
           navigationNext: { display: 'none' }
         }}
+        carousel={{ finite: true }}
       />
 
       {/* Connection to Myinka */}
