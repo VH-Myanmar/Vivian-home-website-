@@ -1,13 +1,28 @@
 import { useLanguage } from '../context/LanguageContext'
 import { translations } from '../translations/content'
 import './StoryPage.css'
+import Lightbox from 'yet-another-react-lightbox'
+import 'yet-another-react-lightbox/styles.css'
 import GrowingDemandImage from '../assets/growing-demand.jpg'
 import TodayProjectsImage from '../assets/today-projects.jpg'
 import BirthVivianHomeImage from '../assets/birth-vivian-home.jpg'
+import { useState } from 'react'
 
 export default function StoryPage() {
   const { language } = useLanguage()
   const t = translations[language]
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+  const [lightboxIndex, setLightboxIndex] = useState(0)
+
+  const galleryImages = t.story.galleryPhotos.map(photo => ({
+    src: photo.src,
+    alt: photo.alt
+  }))
+
+  const handlePhotoClick = (index) => {
+    setLightboxIndex(index)
+    setLightboxOpen(true)
+  }
 
   return (
     <div className="story-page">
@@ -96,13 +111,24 @@ export default function StoryPage() {
           <h2>{t.story.myinkaGalleryTitle}</h2>
           <p className="gallery-intro">{t.story.myinkaGalleryIntro}</p>
           <div className="gallery-grid">
-            {t.story.galleryPhotos.map((photo) => (
+            {t.story.galleryPhotos.map((photo, index) => (
               <div key={photo.id} className="gallery-item" data-orientation={photo.orientation}>
-                <img src={photo.src} alt={photo.alt} />
+                <img 
+                  src={photo.src} 
+                  alt={photo.alt}
+                  onClick={() => handlePhotoClick(index)}
+                  style={{ cursor: 'pointer' }}
+                />
                 <p>{photo.caption}</p>
               </div>
             ))}
           </div>
+          <Lightbox
+            open={lightboxOpen}
+            close={() => setLightboxOpen(false)}
+            slides={galleryImages}
+            index={lightboxIndex}
+          />
         </div>
 
         {/* Connection Section */}

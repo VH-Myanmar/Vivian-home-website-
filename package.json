@@ -12,7 +12,8 @@
   "dependencies": {
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "terser": "^5.47.1"
+    "terser": "^5.47.1",
+    "yet-another-react-lightbox": "^3.32.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
