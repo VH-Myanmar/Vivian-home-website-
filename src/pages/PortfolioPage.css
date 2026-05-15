@@ -246,7 +246,6 @@
 
 .project-gallery-item {
   position: relative;
-  overflow: hidden;
   border-radius: 12px;
   background: white;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -254,6 +253,19 @@
   cursor: pointer;
   border-right: 5px solid #6B8E7F;
   border-top: 5px solid #6B8E7F;
+  box-sizing: border-box;
+}
+
+.project-gallery-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  pointer-events: none;
+  overflow: hidden;
 }
 
 .project-gallery-item:hover {
