@@ -178,13 +178,15 @@ export default function HomePage({ setCurrentPage }) {
             </a>
           </div>
         </div>
-        <Lightbox
-          open={servicesLightboxOpen}
-          close={() => setServicesLightboxOpen(false)}
-          slides={servicesLightboxImage ? [{ src: servicesLightboxImage, alt: 'Service Photo' }] : []}
-          index={0}
-        />
       </section>
+
+      {/* Services Lightbox */}
+      <Lightbox
+        open={servicesLightboxOpen}
+        close={() => setServicesLightboxOpen(false)}
+        slides={servicesLightboxImage ? [{ src: servicesLightboxImage, alt: 'Service Photo' }] : []}
+        index={0}
+      />
 
       {/* Connection to Myinka */}
       <section className="myinka-connection">
