@@ -21,7 +21,9 @@ export default function HomePage({ setCurrentPage }) {
   const [facebookPosts, setFacebookPosts] = useState([])
   const [loading, setLoading] = useState(true)
   const [lightboxOpen, setLightboxOpen] = useState(false)
-  const [lightboxIndex, setLightboxIndex] = useState(0)
+  const [lightboxImage, setLightboxImage] = useState(null)
+  const [servicesLightboxOpen, setServicesLightboxOpen] = useState(false)
+  const [servicesLightboxImage, setServicesLightboxImage] = useState(null)
 
   useEffect(() => {
     // Using actual project photos from Vivian Home's portfolio
@@ -88,7 +90,10 @@ export default function HomePage({ setCurrentPage }) {
             return (
               <div key={index} className={`service-card ${isPortraitCard ? 'portrait-image' : ''}`}>
                 {!isPortraitCard && (
-                  <div className="service-image">
+                  <div className="service-image" onClick={() => {
+                    setServicesLightboxImage(serviceImages[index])
+                    setServicesLightboxOpen(true)
+                  }} style={{ cursor: 'pointer' }}>
                     <img src={serviceImages[index]} alt={service.title} />
                   </div>
                 )}
@@ -104,7 +109,10 @@ export default function HomePage({ setCurrentPage }) {
                   </div>
                 </div>
                 {isPortraitCard && (
-                  <div className="service-image portrait">
+                  <div className="service-image portrait" onClick={() => {
+                    setServicesLightboxImage(serviceImages[index])
+                    setServicesLightboxOpen(true)
+                  }} style={{ cursor: 'pointer' }}>
                     <img src={serviceImages[index]} alt={service.title} />
                   </div>
                 )}
@@ -134,7 +142,7 @@ export default function HomePage({ setCurrentPage }) {
             {facebookPosts.map(post => (
               <div key={post.id} className="feed-card">
                 <div className="feed-image" onClick={() => {
-                  setLightboxIndex(facebookPosts.findIndex(p => p.id === post.id))
+                  setLightboxImage(post.image)
                   setLightboxOpen(true)
                 }} style={{ cursor: 'pointer' }}>
                   <img src={post.image} alt={post.title} />
@@ -152,11 +160,8 @@ export default function HomePage({ setCurrentPage }) {
         <Lightbox
           open={lightboxOpen}
           close={() => setLightboxOpen(false)}
-          slides={facebookPosts.map(post => ({
-            src: post.image,
-            alt: post.title
-          }))}
-          index={lightboxIndex}
+          slides={lightboxImage ? [{ src: lightboxImage, alt: 'Project Photo' }] : []}
+          index={0}
         />
 
         <div className="feed-cta">
@@ -173,6 +178,12 @@ export default function HomePage({ setCurrentPage }) {
             </a>
           </div>
         </div>
+        <Lightbox
+          open={servicesLightboxOpen}
+          close={() => setServicesLightboxOpen(false)}
+          slides={servicesLightboxImage ? [{ src: servicesLightboxImage, alt: 'Service Photo' }] : []}
+          index={0}
+        />
       </section>
 
       {/* Connection to Myinka */}
