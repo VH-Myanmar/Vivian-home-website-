@@ -180,9 +180,11 @@
 .project-card {
   background: #f9f7f5;
   border-radius: 10px;
-  overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
+  border-right: 5px solid #6B8E7F;
+  border-top: 5px solid #6B8E7F;
+  box-sizing: border-box;
 }
 
 .project-card:hover {
