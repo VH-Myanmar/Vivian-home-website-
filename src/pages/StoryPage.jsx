@@ -97,7 +97,7 @@ export default function StoryPage() {
           <p className="gallery-intro">{t.story.myinkaGalleryIntro}</p>
           <div className="gallery-grid">
             {t.story.galleryPhotos.map((photo) => (
-              <div key={photo.id} className="gallery-item">
+              <div key={photo.id} className="gallery-item" data-orientation={photo.orientation}>
                 <img src={photo.src} alt={photo.alt} />
                 <p>{photo.caption}</p>
               </div>

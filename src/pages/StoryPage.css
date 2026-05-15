@@ -292,9 +292,11 @@
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-auto-rows: 280px;
   gap: 2rem;
   margin-bottom: 3rem;
+  grid-auto-flow: dense;
 }
 
 .gallery-item {
@@ -305,6 +307,20 @@
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Portrait photos span 1 column and 2 rows */
+.gallery-item[data-orientation="portrait"] {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+/* Landscape photos span 2 columns and 1 row */
+.gallery-item[data-orientation="landscape"] {
+  grid-column: span 2;
+  grid-row: span 1;
 }
 
 .gallery-item:hover {
