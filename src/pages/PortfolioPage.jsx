@@ -329,7 +329,19 @@ export default function PortfolioPage() {
     },
     livingRooms: {
       label: language === 'en' ? 'Living Rooms' : 'ဧည့်ခန်းများ',
-      images: []
+      images: [
+        '/upload/viber_image_2026-05-15_16-48-00-221.jpg',
+        '/upload/CL10.jpg',
+        '/upload/maple28.png',
+        '/upload/cityvilla09.png',
+        '/upload/cityvilla06.png',
+        '/upload/DSC_0406.webp',
+        '/upload/DSC_0401.webp',
+        '/upload/IMG_7576.webp',
+        '/upload/DSC_0806.webp',
+        '/upload/DSC_0805.webp',
+        '/upload/DSC_0737.webp'
+      ]
     },
     builtIns: {
       label: language === 'en' ? 'Built-ins & Storage' : 'နံရံကပ်ပရိဘောဂများနှင့် သိုလှောင်မှုစနစ်များ',
