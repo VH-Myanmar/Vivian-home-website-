@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import { LanguageProvider } from './context/LanguageContext'
 import Header from './components/Header'
@@ -10,7 +10,16 @@ import CompletedProjectsPage from './pages/CompletedProjectsPage'
 import ContactPage from './pages/ContactPage'
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home')
+  const [currentPage, setCurrentPage] = useState(() => {
+    // Load saved page from localStorage, default to 'home'
+    const savedPage = localStorage.getItem('currentPage')
+    return savedPage || 'home'
+  })
+
+  // Save current page to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('currentPage', currentPage)
+  }, [currentPage])
 
   const renderPage = () => {
     switch(currentPage) {
