@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
 import { LanguageProvider } from './context/LanguageContext'
 import Header from './components/Header'
@@ -12,40 +12,27 @@ import ContactPage from './pages/ContactPage'
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
 
-  // Sync state with URL hash for persistence
-  useEffect(() => {
-    const hash = window.location.hash.slice(1) || 'home'
-    if (['home', 'story', 'portfolio', 'projects', 'contact'].includes(hash)) {
-      setCurrentPage(hash)
-    }
-  }, [])
-
-  const handleSetCurrentPage = (page) => {
-    setCurrentPage(page)
-    window.location.hash = page
-  }
-
   const renderPage = () => {
     switch(currentPage) {
       case 'home':
-        return <HomePage setCurrentPage={handleSetCurrentPage} />
+        return <HomePage setCurrentPage={setCurrentPage} />
       case 'story':
         return <StoryPage />
       case 'portfolio':
         return <PortfolioPage />
       case 'projects':
-        return <CompletedProjectsPage setCurrentPage={handleSetCurrentPage} />
+        return <CompletedProjectsPage setCurrentPage={setCurrentPage} />
       case 'contact':
         return <ContactPage />
       default:
-        return <HomePage setCurrentPage={handleSetCurrentPage} />
+        return <HomePage setCurrentPage={setCurrentPage} />
     }
   }
 
   return (
     <LanguageProvider>
       <div className="app">
-        <Header currentPage={currentPage} setCurrentPage={handleSetCurrentPage} />
+        <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
         <main className="main-content">
           {renderPage()}
         </main>
