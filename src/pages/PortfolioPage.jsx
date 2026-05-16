@@ -300,7 +300,28 @@ export default function PortfolioPage() {
     },
     dining: {
       label: language === 'en' ? 'Dining Rooms' : 'ထမင်းစားခန်းများ',
-      images: []
+      images: [
+        '/upload/showroom01.jpg',
+        '/upload/IMG_3425.JPG',
+        '/upload/IMG_3426.JPG',
+        '/upload/IMG_3435.JPG',
+        '/upload/IMG_3440.JPG',
+        '/upload/forcrop.jpg',
+        '/upload/maple12_.png',
+        '/upload/maple7_.png',
+        '/upload/maple9_.png',
+        '/upload/lavender2.png',
+        '/upload/photo_2026-05-1611.26.39.webp',
+        '/upload/photo_2026-05-1611.26.34.webp',
+        '/upload/DSC_0514.webp',
+        '/upload/DSC_0519.webp',
+        '/upload/DSC_0522.webp',
+        '/upload/DSC_0526.webp',
+        '/upload/DSC_0535.webp',
+        '/upload/DSC_0541.webp',
+        '/upload/DSC_0543.webp',
+        '/upload/IMG_7670.webp'
+      ]
     },
     kitchens: {
       label: language === 'en' ? 'Kitchens' : 'မီးဖိုခန်းများ',
