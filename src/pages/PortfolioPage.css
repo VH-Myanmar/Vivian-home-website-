@@ -52,6 +52,8 @@
   font-weight: 500;
   transition: all 0.3s ease;
   white-space: nowrap;
+  min-width: 100px;
+  text-align: center;
 }
 
 .category-btn:hover {
