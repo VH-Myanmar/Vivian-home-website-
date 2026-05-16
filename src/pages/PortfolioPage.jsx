@@ -158,7 +158,7 @@ export default function PortfolioPage() {
         {
           id: 1,
           name: 'Maple Cottage',
-          images: ['/upload/portfolio_pdf/page-33.webp', '/upload/portfolio_pdf/page-34.webp', '/upload/portfolio_pdf/page-35.webp']
+          images: ['/upload/maple21.png', '/upload/maple22.png', '/upload/maple25.png', '/upload/maple26.png', '/upload/maple27.png', '/upload/maple28.png']
         },
         {
           id: 2,
