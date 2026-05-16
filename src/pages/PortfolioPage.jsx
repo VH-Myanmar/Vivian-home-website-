@@ -325,7 +325,24 @@ export default function PortfolioPage() {
     },
     kitchens: {
       label: language === 'en' ? 'Kitchens' : 'မီးဖိုခန်းများ',
-      images: []
+      images: [
+        '/upload/IMG_3447.JPG',
+        '/upload/IMG_3446.JPG',
+        '/upload/lily.png',
+        '/upload/maple11_.png',
+        '/upload/dafodil4.png',
+        '/upload/kalaw5.png',
+        '/upload/kalaw9.png',
+        '/upload/DSC_0442.webp',
+        '/upload/IMG_7649.webp',
+        '/upload/DSC_0891.webp',
+        '/upload/DSC_0302.webp',
+        '/upload/DSC_0541.webp',
+        '/upload/DSC_0503.webp',
+        '/upload/DSC_0502.webp',
+        '/upload/DSC_0481.webp',
+        '/upload/DSC_0336.webp'
+      ]
     },
     livingRooms: {
       label: language === 'en' ? 'Living Rooms' : 'ဧည့်ခန်းများ',
