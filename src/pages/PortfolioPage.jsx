@@ -204,6 +204,11 @@ export default function PortfolioPage() {
           id: 10,
           name: 'North Dagon',
           images: ['/upload/portfolio_pdf/page-52.webp']
+        },
+        {
+          id: 11,
+          name: language === 'en' ? 'Bathrooms' : 'ရေချိုးခန်းများ',
+          images: ['/upload/bathroom-01.jpg', '/upload/bathroom-02.jpg', '/upload/bathroom-03.jpg', '/upload/bathroom-04.jpg', '/upload/bathroom-05.png', '/upload/bathroom-06.webp']
         }
       ]
     },
