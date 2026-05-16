@@ -324,27 +324,40 @@ export default function PortfolioPage() {
         ))}
       </div>
 
+      {/* Portfolio Group Navigation Buttons - Always Visible */}
+      <div className="portfolio-group-filters">
+        {portfolioSections.map((section) => (
+          <button
+            key={section.id}
+            className={`group-btn ${activeGroup === section.id ? 'active' : ''}`}
+            onClick={() => {
+              setActiveGroup(section.id)
+              setActiveCategory('all')
+            }}
+          >
+            {section.title}
+          </button>
+        ))}
+      </div>
+
       {/* Show Category Photos OR Portfolio Groups */}
       {activeCategory !== 'all' ? (
         // Display category-specific photos
         <div className="portfolio-sections">
           <div className="portfolio-section">
             <h2 className="section-title">{categoryPhotos[activeCategory]?.label}</h2>
-            <div className="projects-grid">
+            <div className="category-images-grid">
               {categoryPhotos[activeCategory]?.images && categoryPhotos[activeCategory].images.length > 0 ? (
-                <div className="project-card">
-                  <div className="project-images">
-                    {categoryPhotos[activeCategory].images.map((image, idx) => (
-                      <LazyImage
-                        key={idx}
-                        src={image}
-                        alt={`${categoryPhotos[activeCategory].label} - ${idx + 1}`}
-                        className="portfolio-image-clickable"
-                        onClick={() => openLightbox(image, idx, categoryPhotos[activeCategory].images)}
-                      />
-                    ))}
+                categoryPhotos[activeCategory].images.map((image, idx) => (
+                  <div key={idx} className="category-image-item">
+                    <LazyImage
+                      src={image}
+                      alt={`${categoryPhotos[activeCategory].label} - ${idx + 1}`}
+                      className="portfolio-image-clickable"
+                      onClick={() => openLightbox(image, idx, categoryPhotos[activeCategory].images)}
+                    />
                   </div>
-                </div>
+                ))
               ) : (
                 <div className="no-projects-message">
                   {language === 'en' ? 'No photos available in this category' : 'ဤအမျိုးအစားတွင် ဓာတ်ပုံများ မရှိပါ'}
@@ -355,49 +368,33 @@ export default function PortfolioPage() {
         </div>
       ) : (
         // Display portfolio groups
-        <>
-          {/* Portfolio Group Navigation Buttons */}
-          <div className="portfolio-group-filters">
-            {portfolioSections.map((section) => (
-              <button
-                key={section.id}
-                className={`group-btn ${activeGroup === section.id ? 'active' : ''}`}
-                onClick={() => setActiveGroup(section.id)}
-              >
-                {section.title}
-              </button>
-            ))}
-          </div>
-
-          {/* Portfolio Sections */}
-          <div className="portfolio-sections">
-            {portfolioSections
-              .filter((section) => section.id === activeGroup)
-              .map((section) => (
-                <div key={section.id} className="portfolio-section">
-                  <h2 className="section-title">{section.title}</h2>
-                  <div className="projects-grid">
-                    {section.projects.map((project) => (
-                      <div key={project.id} className="project-card">
-                        <h3 className="project-name">{project.name}</h3>
-                        <div className="project-images">
-                          {project.images.map((image, idx) => (
-                            <LazyImage
-                              key={idx}
-                              src={image}
-                              alt={`${project.name} - ${idx + 1}`}
-                              className="portfolio-image-clickable"
-                              onClick={() => openLightbox(image, idx, project.images)}
-                            />
-                          ))}
-                        </div>
+        <div className="portfolio-sections">
+          {portfolioSections
+            .filter((section) => section.id === activeGroup)
+            .map((section) => (
+              <div key={section.id} className="portfolio-section">
+                <h2 className="section-title">{section.title}</h2>
+                <div className="projects-grid">
+                  {section.projects.map((project) => (
+                    <div key={project.id} className="project-card">
+                      <h3 className="project-name">{project.name}</h3>
+                      <div className="project-images">
+                        {project.images.map((image, idx) => (
+                          <LazyImage
+                            key={idx}
+                            src={image}
+                            alt={`${project.name} - ${idx + 1}`}
+                            className="portfolio-image-clickable"
+                            onClick={() => openLightbox(image, idx, project.images)}
+                          />
+                        ))}
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-          </div>
-        </>
+              </div>
+            ))}
+        </div>
       )}
 
       {/* Lightbox Modal */}
