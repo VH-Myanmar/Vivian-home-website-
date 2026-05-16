@@ -829,3 +829,24 @@
     gap: 12px;
   }
 }
+
+
+/* Direct category image without wrapper */
+.category-image-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer !important;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 3px solid #6B8E7F;
+  border-top: 3px solid #6B8E7F;
+  aspect-ratio: 1;
+}
+
+.category-image-photo:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}

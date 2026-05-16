@@ -382,14 +382,13 @@ export default function PortfolioPage() {
             <div className="category-images-grid">
               {categoryPhotos[activeCategory]?.images && categoryPhotos[activeCategory].images.length > 0 ? (
                 categoryPhotos[activeCategory].images.map((image, idx) => (
-                  <div key={idx} className="category-image-item">
-                    <LazyImage
-                      src={image}
-                      alt={`${categoryPhotos[activeCategory].label} - ${idx + 1}`}
-                      className="portfolio-image-clickable"
-                      onClick={() => openLightbox(image, idx, categoryPhotos[activeCategory].images)}
-                    />
-                  </div>
+                  <LazyImage
+                    key={idx}
+                    src={image}
+                    alt={`${categoryPhotos[activeCategory].label} - ${idx + 1}`}
+                    className="category-image-photo"
+                    onClick={() => openLightbox(image, idx, categoryPhotos[activeCategory].images)}
+                  />
                 ))
               ) : (
                 <div className="no-projects-message">
