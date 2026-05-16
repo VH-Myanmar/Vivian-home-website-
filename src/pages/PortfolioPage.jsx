@@ -333,7 +333,17 @@ export default function PortfolioPage() {
     },
     builtIns: {
       label: language === 'en' ? 'Built-ins & Storage' : 'နံရံကပ်ပရိဘောဂများနှင့် သိုလှောင်မှုစနစ်များ',
-      images: []
+      images: [
+        '/upload/CL02.jpg',
+        '/upload/IMG_3429.JPG',
+        '/upload/maple31.png',
+        '/upload/maple25.png',
+        '/upload/cityvilla15.png',
+        '/upload/cityvilla02.png',
+        '/upload/IMG_6635.webp',
+        '/upload/DSC_0659.webp',
+        '/upload/DSC_0661.webp'
+      ]
     },
     staircases: {
       label: language === 'en' ? 'Staircase and Hallways' : 'လှေကားနှင့် လျှောက်လမ်းများ',
