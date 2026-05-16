@@ -78,7 +78,6 @@ export default function PortfolioPage() {
     {
       id: 'ourDesigns',
       title: language === 'en' ? 'Our Designs (3D design)' : 'ကျွန်ုပ်တို့၏ 3D ဒီဇိုင်းများ',
-      category: 'all',
       projects: [
         {
           id: 1,
@@ -155,7 +154,6 @@ export default function PortfolioPage() {
     {
       id: 'ourInteriorDesigns',
       title: language === 'en' ? 'Our Interior Designs' : 'ကျွန်ုပ်တို့၏အိမ်အလှဒီဇိုင်းများ',
-      category: 'all',
       projects: [
         {
           id: 1,
@@ -206,19 +204,12 @@ export default function PortfolioPage() {
           id: 10,
           name: 'North Dagon',
           images: ['/upload/portfolio_pdf/page-52.webp']
-        },
-        {
-          id: 11,
-          name: language === 'en' ? 'Bathrooms' : 'ရေချိုးခန်းများ',
-          category: 'bathrooms',
-          images: ['/upload/bathroom-01.jpg', '/upload/bathroom-02.jpg', '/upload/bathroom-03.jpg', '/upload/bathroom-04.jpg', '/upload/bathroom-05.png', '/upload/bathroom-06.webp']
         }
       ]
     },
     {
       id: 'holidayHomeProjects',
       title: language === 'en' ? 'Holiday Home Projects' : 'အပန်းဖြေအိမ်ပရောဂျက်များ',
-      category: 'all',
       projects: [
         {
           id: 1,
@@ -264,7 +255,43 @@ export default function PortfolioPage() {
     }
   ]
 
-  // Category buttons for filtering (kept for future use)
+  // Category-based photos (independent from group sections)
+  const categoryPhotos = {
+    bathrooms: {
+      label: language === 'en' ? 'Bathrooms' : 'ရေချိုးခန်းများ',
+      images: ['/upload/bathroom-01.jpg', '/upload/bathroom-02.jpg', '/upload/bathroom-03.jpg', '/upload/bathroom-04.jpg', '/upload/bathroom-05.png', '/upload/bathroom-06.webp']
+    },
+    bedrooms: {
+      label: language === 'en' ? 'Bedrooms' : 'အိပ်ခန်းများ',
+      images: []
+    },
+    dining: {
+      label: language === 'en' ? 'Dining Rooms' : 'ထမင်းစားခန်းများ',
+      images: []
+    },
+    kitchens: {
+      label: language === 'en' ? 'Kitchens' : 'မီးဖိုခန်းများ',
+      images: []
+    },
+    livingRooms: {
+      label: language === 'en' ? 'Living Rooms' : 'ဧည့်ခန်းများ',
+      images: []
+    },
+    builtIns: {
+      label: language === 'en' ? 'Built-ins & Storage' : 'နံရံကပ်ပရိဘောဂများနှင့် သိုလှောင်မှုစနစ်များ',
+      images: []
+    },
+    staircases: {
+      label: language === 'en' ? 'Staircase and Hallways' : 'လှေကားနှင့် လျှောက်လမ်းများ',
+      images: []
+    },
+    lighting: {
+      label: language === 'en' ? 'Decorative Lighting' : 'အိမ်အလှဆင်မီးများ',
+      images: []
+    }
+  }
+
+  // Category buttons for filtering
   const categories = [
     { id: 'all', label: language === 'en' ? 'Showroom' : 'ပြခန်း' },
     { id: 'bedrooms', label: language === 'en' ? 'Bedrooms' : 'အိပ်ခန်းများ' },
@@ -290,49 +317,67 @@ export default function PortfolioPage() {
           <button
             key={category.id}
             className={`category-btn ${activeCategory === category.id ? 'active' : ''}`}
-            onClick={() => {
-              setActiveCategory(category.id)
-              // Switch to Our Interior Designs when filtering by category
-              if (category.id !== 'all') {
-                setActiveGroup('ourInteriorDesigns')
-              }
-            }}
+            onClick={() => setActiveCategory(category.id)}
           >
             {category.label}
           </button>
         ))}
       </div>
 
-      {/* Portfolio Group Navigation Buttons */}
-      <div className="portfolio-group-filters">
-        {portfolioSections.map((section) => (
-          <button
-            key={section.id}
-            className={`group-btn ${activeGroup === section.id ? 'active' : ''}`}
-            onClick={() => setActiveGroup(section.id)}
-          >
-            {section.title}
-          </button>
-        ))}
-      </div>
+      {/* Show Category Photos OR Portfolio Groups */}
+      {activeCategory !== 'all' ? (
+        // Display category-specific photos
+        <div className="portfolio-sections">
+          <div className="portfolio-section">
+            <h2 className="section-title">{categoryPhotos[activeCategory]?.label}</h2>
+            <div className="projects-grid">
+              {categoryPhotos[activeCategory]?.images && categoryPhotos[activeCategory].images.length > 0 ? (
+                <div className="project-card">
+                  <div className="project-images">
+                    {categoryPhotos[activeCategory].images.map((image, idx) => (
+                      <LazyImage
+                        key={idx}
+                        src={image}
+                        alt={`${categoryPhotos[activeCategory].label} - ${idx + 1}`}
+                        className="portfolio-image-clickable"
+                        onClick={() => openLightbox(image, idx, categoryPhotos[activeCategory].images)}
+                      />
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="no-projects-message">
+                  {language === 'en' ? 'No photos available in this category' : 'ဤအမျိုးအစားတွင် ဓာတ်ပုံများ မရှိပါ'}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      ) : (
+        // Display portfolio groups
+        <>
+          {/* Portfolio Group Navigation Buttons */}
+          <div className="portfolio-group-filters">
+            {portfolioSections.map((section) => (
+              <button
+                key={section.id}
+                className={`group-btn ${activeGroup === section.id ? 'active' : ''}`}
+                onClick={() => setActiveGroup(section.id)}
+              >
+                {section.title}
+              </button>
+            ))}
+          </div>
 
-      {/* Portfolio Sections */}
-      <div className="portfolio-sections">
-        {portfolioSections
-          .filter((section) => section.id === activeGroup)
-          .map((section) => {
-            // Filter projects by active category
-            const filteredProjects = section.projects.filter((project) => {
-              if (activeCategory === 'all') return true
-              return project.category === activeCategory
-            })
-
-            return (
-              <div key={section.id} className="portfolio-section">
-                <h2 className="section-title">{section.title}</h2>
-                <div className="projects-grid">
-                  {filteredProjects.length > 0 ? (
-                    filteredProjects.map((project) => (
+          {/* Portfolio Sections */}
+          <div className="portfolio-sections">
+            {portfolioSections
+              .filter((section) => section.id === activeGroup)
+              .map((section) => (
+                <div key={section.id} className="portfolio-section">
+                  <h2 className="section-title">{section.title}</h2>
+                  <div className="projects-grid">
+                    {section.projects.map((project) => (
                       <div key={project.id} className="project-card">
                         <h3 className="project-name">{project.name}</h3>
                         <div className="project-images">
@@ -347,17 +392,13 @@ export default function PortfolioPage() {
                           ))}
                         </div>
                       </div>
-                    ))
-                  ) : (
-                    <div className="no-projects-message">
-                      {language === 'en' ? 'No projects found in this category' : 'ဤအမျိုးအစားတွင် ပရောဂျက်များ မရှိပါ'}
-                    </div>
-                  )}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )
-          })}
-      </div>
+              ))}
+          </div>
+        </>
+      )}
 
       {/* Lightbox Modal */}
       {lightboxOpen && (
