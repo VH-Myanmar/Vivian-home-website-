@@ -94,7 +94,6 @@ export default function StoryPage() {
             {t.story.coreValues.map((value, index) => (
               <div key={index} className="core-value-card">
                 <h3>{value.title}</h3>
-                <p>{value.description}</p>
               </div>
             ))}
           </div>

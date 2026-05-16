@@ -81,9 +81,9 @@ export const content = {
 
       valuesTitle: 'Our Values',
       coreValues: [
-        { title: 'Integrity', description: 'We act with honesty and strong moral principles in all our work.' },
-        { title: 'Humility', description: 'We remain grounded and open to learning from every project and client.' },
-        { title: 'Collaboration', description: 'We work together as a team to deliver exceptional results.' }
+        { title: 'Integrity' },
+        { title: 'Humility' },
+        { title: 'Collaboration' }
       ],
       values: [
         {
@@ -328,9 +328,9 @@ export const content = {
 
       valuesTitle: 'ကျွန်ုပ်တို့၏တန်ဖိုးထားမှုများ',
       coreValues: [
-        { title: 'ဖြောင့်မတ်မှန်ကန်မှု', description: 'ကျွန်ုပ်တို့သည် ကျွန်ုပ်တို့၏ လုပ်ငန်းအားလုံးတွင် တ誠実さ နှင့် အကြင်းအကျbamboo ကိုယ်ကျင့်တရားများဖြင့် လုပ်ဆောင်ပါသည်။' },
-        { title: 'နှိမ့်ချမှု', description: 'ကျွန်ုပ်တို့သည် အလုပ်တစ်ခုခုတစ်ခြင်းမှုနှင့် ဖောက်သည်တစ်ဦးတစ်ဖက်မှ သင်ယူရန် အဆင့်မြှင့်တင်ထားကြပါသည်။' },
-        { title: 'ပူးပေါင်းဆောင်ရွက်မှု', description: 'ကျွန်ုပ်တို့သည် အသုံးအဆောင်ရှိသောရလဒ်များ ပေးစွမ်းရန် အဖွဲ့အစည်းအဖြစ် အတူတကွ လုပ်ဆောင်ပါသည်။' }
+        { title: 'ဖြောင့်မတ်မှန်ကန်မှု' },
+        { title: 'နှိမ့်ချမှု' },
+        { title: 'ပူးပေါင်းဆောင်ရွက်မှု' }
       ],
       values: [
         {
