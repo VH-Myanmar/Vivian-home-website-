@@ -337,7 +337,30 @@ export default function PortfolioPage() {
     },
     staircases: {
       label: language === 'en' ? 'Staircase and Hallways' : 'လှေကားနှင့် လျှောက်လမ်းများ',
-      images: []
+      images: [
+        '/upload/viber_image_2026-05-15_16-41-32-502.jpg',
+        '/upload/CL12.jpg',
+        '/upload/IMG_3431.JPG',
+        '/upload/maple10_.png',
+        '/upload/lavender10.png',
+        '/upload/KY5.png',
+        '/upload/maple24.png',
+        '/upload/lavender15.png',
+        '/upload/lavender9.png',
+        '/upload/maple21.png',
+        '/upload/maple26.png',
+        '/upload/b53.png',
+        '/upload/lavender8.png',
+        '/upload/cityvilla08.png',
+        '/upload/cityvilla12.png',
+        '/upload/cityvilla07.png',
+        '/upload/cityvilla10.png',
+        '/upload/DSC_0588.webp',
+        '/upload/DSC_0497.webp',
+        '/upload/DSC_0797.webp',
+        '/upload/DSC_0801.webp',
+        '/upload/DSC_0678.webp'
+      ]
     },
     lighting: {
       label: language === 'en' ? 'Decorative Lighting' : 'အိမ်အလှဆင်မီးများ',
