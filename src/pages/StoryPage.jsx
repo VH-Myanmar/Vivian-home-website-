@@ -88,19 +88,23 @@ export default function StoryPage() {
         {/* Values Section */}
         <div className="values-section">
           <h2>{t.story.valuesTitle}</h2>
+          
+          {/* Core Values - 3 small boxes on top in landscape */}
+          <div className="core-values-grid">
+            {t.story.coreValues.map((value, index) => (
+              <div key={index} className="core-value-card">
+                <h3>{value.title}</h3>
+                <p>{value.description}</p>
+              </div>
+            ))}
+          </div>
+          
+          {/* Main Values - 4 larger boxes below in 2x2 grid */}
           <div className="values-grid">
             {t.story.values.map((value, index) => (
               <div key={index} className="value-card" data-index={index}>
-                {!value.isValuesList && <h3>{value.title}</h3>}
-                {value.isValuesList ? (
-                  <div className="values-list">
-                    {value.values.map((v, i) => (
-                      <div key={i} className="value-item">{v}</div>
-                    ))}
-                  </div>
-                ) : (
-                  <p>{value.description}</p>
-                )}
+                <h3>{value.title}</h3>
+                <p>{value.description}</p>
               </div>
             ))}
           </div>

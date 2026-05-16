@@ -860,3 +860,32 @@
 /* ============================================================================
    END OF HOME PAGE STYLES
    ============================================================================ */
+
+
+/* ============================================================================
+   LIGHTBOX NAVIGATION DISABLE
+   ============================================================================ */
+/* Completely hide and disable navigation buttons */
+.yarl__navigation_prev,
+.yarl__navigation_next,
+[data-testid="navigation_prev"],
+[data-testid="navigation_next"],
+.yarl__button_nav {
+  display: none !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+/* Disable all navigation-related elements */
+.yarl__container button[aria-label*="previous"],
+.yarl__container button[aria-label*="next"],
+.yarl__container button[aria-label*="Previous"],
+.yarl__container button[aria-label*="Next"] {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+/* Prevent swipe/drag navigation */
+.yarl__carousel {
+  touch-action: none !important;
+}

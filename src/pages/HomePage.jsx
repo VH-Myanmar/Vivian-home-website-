@@ -4,7 +4,7 @@ import { translations } from '../translations/content'
 import './HomePage.css'
 import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
-import { Zoom, Counter } from 'yet-another-react-lightbox/plugins'
+import { Zoom, Counter, Fullscreen } from 'yet-another-react-lightbox/plugins'
 import InteriorDesignIcon from '../assets/icons/interior-design.png'
 import FurnitureSelectionIcon from '../assets/icons/furniture-selection.png'
 import StylingConsultationIcon from '../assets/icons/styling-consultation.png'
@@ -167,10 +167,12 @@ export default function HomePage({ setCurrentPage }) {
           on={{ view: () => {} }}
           controller={{ closeOnBackdropClick: true, keyboard: false }}
           styles={{
-            navigationPrev: { display: 'none' },
-            navigationNext: { display: 'none' }
+            navigationPrev: { display: 'none !important' },
+            navigationNext: { display: 'none !important' },
+            container: { pointerEvents: 'none' }
           }}
-          carousel={{ finite: true }}
+          carousel={{ finite: true, preload: 1 }}
+          plugins={[Fullscreen]}
         />
 
         <div className="feed-cta">
@@ -199,10 +201,12 @@ export default function HomePage({ setCurrentPage }) {
         on={{ view: () => {} }}
         controller={{ closeOnBackdropClick: true, keyboard: false }}
         styles={{
-          navigationPrev: { display: 'none' },
-          navigationNext: { display: 'none' }
+          navigationPrev: { display: 'none !important' },
+          navigationNext: { display: 'none !important' },
+          container: { pointerEvents: 'none' }
         }}
-        carousel={{ finite: true }}
+        carousel={{ finite: true, preload: 1 }}
+        plugins={[Fullscreen]}
       />
 
       {/* Connection to Myinka */}

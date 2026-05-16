@@ -80,6 +80,11 @@ export const content = {
       chapter4Text3: 'We are committed to meticulous design, quality materials, and craftsmanship, maintaining the spirit of our first project in every work we undertake. We believe that the spaces we create will be loved by our clients for years to come.',
 
       valuesTitle: 'Our Values',
+      coreValues: [
+        { title: 'Integrity', description: 'We act with honesty and strong moral principles in all our work.' },
+        { title: 'Humility', description: 'We remain grounded and open to learning from every project and client.' },
+        { title: 'Collaboration', description: 'We work together as a team to deliver exceptional results.' }
+      ],
       values: [
         {
           title: 'Timeless, Trend-Resistant Design',
@@ -96,12 +101,6 @@ export const content = {
         {
           title: 'Lasting Beauty & Responsibility',
           description: 'We believe every space we create should be beautiful and reflect a commitment to environmental and social responsibility.'
-        },
-        {
-          title: 'Integrity, Humility, Collaboration',
-          description: 'Our core values that guide every decision and action',
-          isValuesList: true,
-          values: ['Integrity', 'Humility', 'Collaboration']
         }
       ],
 
@@ -328,28 +327,27 @@ export const content = {
       chapter4Text3: 'ကျွန်ုပ်တို့ ဖန်တီးပေးလိုက်တဲ့ အိမ်နေရာလေးတွေကို လူကြီးမင်းတို့အနေနဲ့ နောင်နှစ်ပေါင်းများစွာတိုင်အောင် မရိုးနိုင်ဘဲ မြတ်နိုးတန်ဖိုးထားနေကြလိမ့်မယ်လို့ ကျွန်ုပ်တို့ ယုံကြည်ပါတယ်။',
 
       valuesTitle: 'ကျွန်ုပ်တို့၏တန်ဖိုးထားမှုများ',
+      coreValues: [
+        { title: 'ဖြောင့်မတ်မှန်ကန်မှု', description: 'ကျွန်ုပ်တို့သည် ကျွန်ုပ်တို့၏ လုပ်ငန်းအားလုံးတွင် တ誠実さ နှင့် အကြင်းအကျbamboo ကိုယ်ကျင့်တရားများဖြင့် လုပ်ဆောင်ပါသည်။' },
+        { title: 'နှိမ့်ချမှု', description: 'ကျွန်ုပ်တို့သည် အလုပ်တစ်ခုခုတစ်ခြင်းမှုနှင့် ဖောက်သည်တစ်ဦးတစ်ဖက်မှ သင်ယူရန် အဆင့်မြှင့်တင်ထားကြပါသည်။' },
+        { title: 'ပူးပေါင်းဆောင်ရွက်မှု', description: 'ကျွန်ုပ်တို့သည် အသုံးအဆောင်ရှိသောရလဒ်များ ပေးစွမ်းရန် အဖွဲ့အစည်းအဖြစ် အတူတကွ လုပ်ဆောင်ပါသည်။' }
+      ],
       values: [
         {
           title: 'ခေတ်မရွေး ရိုးမသွားသော ဒီဇိုင်း',
-          description: 'ခေတ်စားနေသည့် စတိုင်များနောက်သို့ မလိုက်ဘဲ အချိန်ကာလ မည်မျှပင် ပြောင်းလဲစေကာမူ အမြဲတမ်း လှပဆန်းသစ်နေမည့် ဒီဇိုင်းများကို ကျွန်တော်တို့ ဖန်တီးပုံဖော်ပါသည်။'
+          description: 'ခေတ်စားနေသည့် စတိုင်များနောက်သို့ မလိုက်ဘဲ အချိန်ကာလ မည်မျှပင် ပြောင်းလဲစေကာမူ အမြဲတမ်း လှပဆန်းသစ်နေမည့် ဒီဇိုင်းများကို ကျွန်တော်တို့ ဖန်တီးပုံဖော်ပါသည်.'
         },
         {
           title: 'အဆင့်မြင့်လက်ရာနှင့် အရည်အသွေး',
-          description: 'အသေးစိတ်ကအစ ဂရုပြုပါတယ်။ အဆင့်မြင့်ကုန်ကြမ်းများနှင့် ကျွမ်းကျင်ပညာရှင်များ ပေါင်းစပ်ပြီး စံချိန်မီတဲ့ လက်ရာကောင်းများ ဖြစ်လာအောင် ဖန်တီးပေးပါတယ်။'
+          description: 'အသေးစိတ်ကအစ ဂရုပြုပါတယ်။ အဆင့်မြင့်ကုန်ကြမ်းများနှင့် ကျွမ်းကျင်ပညာရှင်များ ပေါင်းစပ်ပြီး စံချိန်မီတဲ့ လက်ရာကောင်းများ ဖြစ်လာအောင် ဖန်တီးပေးပါတယ်.'
         },
         {
           title: 'ကိုယ်ပိုင်ဟန်နှင့် စိတ်တိုင်းကျဖန်တီးမှု',
-          description: 'နေအိမ်တိုင်းမှာ ပိုင်ရှင်ရဲ့ ကိုယ်ပိုင်ဟန် ရှိနေစေရပါမယ်။ လူကြီးမင်းတို့ရဲ့ စိတ်ကူးတွေကို အခြေခံပြီး စိတ်တိုင်းကျ ဝန်ဆောင်မှုတွေနဲ့ ပုံဖော်ပေးပါတယ်။'
+          description: 'နေအိမ်တိုင်းမှာ ပိုင်ရှင်ရဲ့ ကိုယ်ပိုင်ဟန် ရှိနေစေရပါမယ်။ လူကြီးမင်းတို့ရဲ့ စိတ်ကူးတွေကို အခြေခံပြီး စိတ်တိုင်းကျ ဝန်ဆောင်မှုတွေနဲ့ ပုံဖော်ပေးပါတယ်.'
         },
         {
           title: 'ကြီးကျယ်သော အလှ နှင့် တာဝန်ယူမှု',
-          description: 'ကျွန်ုပ်တို့ ဖန်တီးပေးလိုက်တဲ့ နေရာလေးတွေက လှပတယ်။ သဘာဝပတ်ဝန်းကျင်နှင့် လူမှုအဖွဲ့အစည်းအပေါ် တာဝန်ယူမှုရှိတဲ့ ကတိကဝတ်ကို ထင်ဟပ်နေတယ်။'
-        },
-        {
-          title: 'ဖြောင့်မတ်မှန်ကန်မှု၊ နှိမ့်ချမှု၊ ပူးပေါင်းဆောင်ရွက်မှု',
-          description: 'ကျွန်ုပ်တို့၏ အဓိကတန်ဖိုးထားမှုများ',
-          isValuesList: true,
-          values: ['ဖြောင့်မတ်မှန်ကန်မှု', 'နှိမ့်ချမှု', 'ပူးပေါင်းဆောင်ရွက်မှု']
+          description: 'ကျွန်ုပ်တို့ ဖန်တီးပေးလိုက်တဲ့ နေရာလေးတွေက လှပတယ်။ သဘာဝပတ်ဝန်းကျင်နှင့် လူမှုအဖွဲ့အစည်းအပေါ် တာဝန်ယူမှုရှိတဲ့ ကတိကဝတ်ကို ထင်ဟပ်နေတယ်.'
         }
       ],
 
