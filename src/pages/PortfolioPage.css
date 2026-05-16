@@ -745,3 +745,24 @@
     right: 10px;
   }
 }
+
+.no-projects-message {
+  grid-column: 1 / -1;
+  padding: 60px 40px;
+  text-align: center;
+  color: #999;
+  font-size: 1.1rem;
+  background: #f9f7f5;
+  border-radius: 8px;
+  border-left: 3px solid #d4d4d4;
+  border-top: 3px solid #d4d4d4;
+}
+
+.portfolio-image-clickable {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-image-clickable:hover {
+  transform: scale(1.05);
+}

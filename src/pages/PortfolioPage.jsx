@@ -78,6 +78,7 @@ export default function PortfolioPage() {
     {
       id: 'ourDesigns',
       title: language === 'en' ? 'Our Designs (3D design)' : 'ကျွန်ုပ်တို့၏ 3D ဒီဇိုင်းများ',
+      category: 'all',
       projects: [
         {
           id: 1,
@@ -154,6 +155,7 @@ export default function PortfolioPage() {
     {
       id: 'ourInteriorDesigns',
       title: language === 'en' ? 'Our Interior Designs' : 'ကျွန်ုပ်တို့၏အိမ်အလှဒီဇိုင်းများ',
+      category: 'all',
       projects: [
         {
           id: 1,
@@ -208,6 +210,7 @@ export default function PortfolioPage() {
         {
           id: 11,
           name: language === 'en' ? 'Bathrooms' : 'ရေချိုးခန်းများ',
+          category: 'bathrooms',
           images: ['/upload/bathroom-01.jpg', '/upload/bathroom-02.jpg', '/upload/bathroom-03.jpg', '/upload/bathroom-04.jpg', '/upload/bathroom-05.png', '/upload/bathroom-06.webp']
         }
       ]
@@ -215,6 +218,7 @@ export default function PortfolioPage() {
     {
       id: 'holidayHomeProjects',
       title: language === 'en' ? 'Holiday Home Projects' : 'အပန်းဖြေအိမ်ပရောဂျက်များ',
+      category: 'all',
       projects: [
         {
           id: 1,
@@ -310,29 +314,43 @@ export default function PortfolioPage() {
       <div className="portfolio-sections">
         {portfolioSections
           .filter((section) => section.id === activeGroup)
-          .map((section) => (
-            <div key={section.id} className="portfolio-section">
-              <h2 className="section-title">{section.title}</h2>
-              <div className="projects-grid">
-                {section.projects.map((project) => (
-                  <div key={project.id} className="project-card">
-                    <h3 className="project-name">{project.name}</h3>
-                    <div className="project-images">
-                      {project.images.map((image, idx) => (
-                        <LazyImage
-                          key={idx}
-                          src={image}
-                          alt={`${project.name} - ${idx + 1}`}
-                          className="portfolio-image-clickable"
-                          onClick={() => openLightbox(image, idx, project.images)}
-                        />
-                      ))}
+          .map((section) => {
+            // Filter projects by active category
+            const filteredProjects = section.projects.filter((project) => {
+              if (activeCategory === 'all') return true
+              return project.category === activeCategory
+            })
+
+            return (
+              <div key={section.id} className="portfolio-section">
+                <h2 className="section-title">{section.title}</h2>
+                <div className="projects-grid">
+                  {filteredProjects.length > 0 ? (
+                    filteredProjects.map((project) => (
+                      <div key={project.id} className="project-card">
+                        <h3 className="project-name">{project.name}</h3>
+                        <div className="project-images">
+                          {project.images.map((image, idx) => (
+                            <LazyImage
+                              key={idx}
+                              src={image}
+                              alt={`${project.name} - ${idx + 1}`}
+                              className="portfolio-image-clickable"
+                              onClick={() => openLightbox(image, idx, project.images)}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    <div className="no-projects-message">
+                      {language === 'en' ? 'No projects found in this category' : 'ဤအမျိုးအစားတွင် ပရောဂျက်များ မရှိပါ'}
                     </div>
-                  </div>
-                ))}
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
       </div>
 
       {/* Lightbox Modal */}
