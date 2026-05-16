@@ -386,7 +386,13 @@ export default function PortfolioPage() {
     },
     lighting: {
       label: language === 'en' ? 'Decorative Lighting' : 'အိမ်အလှဆင်မီးများ',
-      images: []
+      images: [
+        '/upload/viber_image_2026-05-15_16-35-59-291.jpg',
+        '/upload/viber_image_2026-05-15_16-35-03-949.jpg',
+        '/upload/IMG_6585.webp',
+        '/upload/IMG_0801.webp',
+        '/upload/IMG_0804.webp'
+      ]
     }
   }
 
