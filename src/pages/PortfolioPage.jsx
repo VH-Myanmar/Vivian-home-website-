@@ -153,7 +153,7 @@ export default function PortfolioPage() {
     },
     {
       id: 'ourInteriorDesigns',
-      title: language === 'en' ? 'Our Interior Designs' : 'ကျွန်ုပ်တို့၏ အတွင်းအလှဒီဇိုင်းများ',
+      title: language === 'en' ? 'Our Interior Designs' : 'ကျွန်ုပ်တို့၏အိမ်အလှဒီဇိုင်းများ',
       projects: [
         {
           id: 1,
@@ -209,7 +209,7 @@ export default function PortfolioPage() {
     },
     {
       id: 'holidayHomeProjects',
-      title: language === 'en' ? 'Holiday Home Projects' : 'ပန်းခြံအိမ်ပရောဂျက်များ',
+      title: language === 'en' ? 'Holiday Home Projects' : 'အပန်းဖြေအိမ်ပရောဂျက်များ',
       projects: [
         {
           id: 1,
