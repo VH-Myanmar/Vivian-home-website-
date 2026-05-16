@@ -290,7 +290,13 @@ export default function PortfolioPage() {
           <button
             key={category.id}
             className={`category-btn ${activeCategory === category.id ? 'active' : ''}`}
-            onClick={() => setActiveCategory(category.id)}
+            onClick={() => {
+              setActiveCategory(category.id)
+              // Switch to Our Interior Designs when filtering by category
+              if (category.id !== 'all') {
+                setActiveGroup('ourInteriorDesigns')
+              }
+            }}
           >
             {category.label}
           </button>
