@@ -163,13 +163,7 @@ export default function HomePage({ setCurrentPage }) {
           close={() => setLightboxOpen(false)}
           slides={lightboxImage ? [{ src: lightboxImage, alt: 'Project Photo' }] : []}
           index={0}
-          toolbar={false}
-          on={{ view: () => {} }}
           controller={{ closeOnBackdropClick: true, keyboard: false }}
-          styles={{
-            navigationPrev: { display: 'none !important' },
-            navigationNext: { display: 'none !important' }
-          }}
           carousel={{ finite: true, preload: 1 }}
           plugins={[Fullscreen]}
         />
@@ -196,14 +190,7 @@ export default function HomePage({ setCurrentPage }) {
         close={() => setServicesLightboxOpen(false)}
         slides={servicesLightboxImage ? [{ src: servicesLightboxImage, alt: 'Service Photo' }] : []}
         index={0}
-        toolbar={false}
-        on={{ view: () => {} }}
         controller={{ closeOnBackdropClick: true, keyboard: false }}
-        styles={{
-          navigationPrev: { display: 'none !important' },
-          navigationNext: { display: 'none !important' },
-          container: { pointerEvents: 'none' }
-        }}
         carousel={{ finite: true, preload: 1 }}
         plugins={[Fullscreen]}
       />
