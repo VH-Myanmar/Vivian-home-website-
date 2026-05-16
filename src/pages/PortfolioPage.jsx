@@ -257,7 +257,7 @@ export default function PortfolioPage() {
 
   // Category buttons for filtering (kept for future use)
   const categories = [
-    { id: 'all', label: language === 'en' ? 'Showroom' : 'ပြခ်န်' },
+    { id: 'all', label: language === 'en' ? 'Showroom' : 'ပြခန်း' },
     { id: 'bedrooms', label: language === 'en' ? 'Bedrooms' : 'အိပ်ခန်းများ' },
     { id: 'dining', label: language === 'en' ? 'Dining Rooms' : 'ထမင်းစားခန်းများ' },
     { id: 'kitchens', label: language === 'en' ? 'Kitchens' : 'မီးဖိုခန်းများ' },
