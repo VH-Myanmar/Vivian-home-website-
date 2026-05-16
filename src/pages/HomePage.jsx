@@ -168,8 +168,7 @@ export default function HomePage({ setCurrentPage }) {
           controller={{ closeOnBackdropClick: true, keyboard: false }}
           styles={{
             navigationPrev: { display: 'none !important' },
-            navigationNext: { display: 'none !important' },
-            container: { pointerEvents: 'none' }
+            navigationNext: { display: 'none !important' }
           }}
           carousel={{ finite: true, preload: 1 }}
           plugins={[Fullscreen]}
